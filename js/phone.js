@@ -63,9 +63,15 @@ const showPhoneDetails = (phone) => {
 
     showDetailContainer.innerHTML = `
         <img src="${phone.image}" alt="">
-        <p><span>Storage:</span>${phone?.mainFeatures?.storage}</p>
+        <p><span class="font-bold">Storage: </span>${phone?.mainFeatures?.storage}</p>
+        <p><span class="font-bold">Display Size: </span>${phone?.mainFeatures?.displaySize}</p>
+        <p><span class="font-bold">Chipset: </span>${phone?.mainFeatures?.chipSet}</p>
+        <p><span class="font-bold">Memory: </span>${phone?.mainFeatures?.memory}</p>
+        <p><span class="font-bold">Release Date: </span>${phone?.mainFeatures?.releaseDate}</p>
+        <p><span class="font-bold">Brand: </span>${phone?.brand}</p>
+        <p><span class="font-bold">GPS: </span>${phone?.others?.GPS || 'No GPS'}</p>
     `
-
+    
     // Show modal
     show_details_modal.showModal();
 }
@@ -94,5 +100,4 @@ const toggleLoadingSpinner = (isLoading) => {
 // Handle show all 
 const handleShowAll = () => {
     handleSearch(true);
-
 }
